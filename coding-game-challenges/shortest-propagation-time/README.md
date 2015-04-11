@@ -1,6 +1,5 @@
 
 #Challenge
-Statement
 Here at Teads we know that to maximize the impact of an advertisement, the message needs to spread far and quickly.
  
 You are given data to calculate viral potential, represented by a network of people ready to relay a message to more people.
