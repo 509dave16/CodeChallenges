@@ -53,7 +53,7 @@ CONSTRAINTS :
 
 ##2. Using NodeJS
 - Install NodeJS by following the instructions at the website: https://nodejs.org/
-- Download the CodingChallenges repo from Github: https://github.com/509dave16/CodeChallenges
+- Download the CodeChallenges repo from Github: https://github.com/509dave16/CodeChallenges
 - Extract the contents of the zip
 - Using the Command Prompt or Terminal navigate to the following directory:<br>
 <strong>CodeChallenges/coding-game-challenges/shortest-propagation-time/shortest-propagation-time-test.js</strong>
