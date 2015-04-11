@@ -56,7 +56,7 @@ CONSTRAINTS :
 - Download the CodeChallenges repo from Github: https://github.com/509dave16/CodeChallenges
 - Extract the contents of the zip
 - Using the Command Prompt or Terminal navigate to the following directory:<br>
-<strong>CodeChallenges/coding-game-challenges/shortest-propagation-time/shortest-propagation-time-test.js</strong>
+<strong>CodeChallenges/coding-game-challenges/shortest-propagation-time/</strong>
 - Then run the following command:<br>
 <strong>node shortest-propagation-time-test.js < path to one of the validation files provided in the "input" folder ></strong>
 - Each input file has a corresponding output file according to the number postfix(e.g. input.0.txt and output.0.txt)
