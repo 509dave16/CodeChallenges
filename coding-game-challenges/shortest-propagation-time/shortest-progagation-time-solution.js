@@ -27,7 +27,7 @@ function computeShortestPropagationTime(relationSets)
     }
     //Determines when computing of SPT is done.
     var foundOptimalSourceNode = false
-    //Keep processing till we have foudn the SPT.
+    //Keep processing till we have found the SPT.
     while(foundOptimalSourceNode === false)
     {
         //Determines if their is a neighbor node with a shorter SPT than the current node.
