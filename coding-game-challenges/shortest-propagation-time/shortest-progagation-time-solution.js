@@ -1,5 +1,6 @@
 //Stores the shortest propagation time.
 var shortestPropagationTime = 1000000;
+//Keeps track of all nodes that have been processed.
 var sourceNodesComputed = [];
 //Nmber of relations to parse.
 var numberOfRelations = readline();
@@ -7,9 +8,10 @@ var numberOfRelations = readline();
 var relationSets = parseInput(numberOfRelations);
 //Compute shortest propagation time across relations.
 computeShortestPropagationTime(relationSets);
+//Print the computed SPT to the console.
 print(shortestPropagationTime);
 
-//For each node in compute the time it takes to propagate the broadcast.
+//For each node in the relations sets, compute the time it takes to propagate the broadcast.
 function computeShortestPropagationTime(relationSets)
 {
     //Relation set of source node.
@@ -23,8 +25,9 @@ function computeShortestPropagationTime(relationSets)
             break;
         }
     }
-    //Determine when computing of SPT is done.
-    var foundOptimalSourceNode = false;
+    //Determines when computing of SPT is done.
+    var foundOptimalSourceNode = false
+    //Keep processing till we have foudn the SPT.
     while(foundOptimalSourceNode === false)
     {
         //Determines if their is a neighbor node with a shorter SPT than the current node.
@@ -32,10 +35,9 @@ function computeShortestPropagationTime(relationSets)
         for(var relationIndex = 0; relationIndex < currentRelationSet.length; relationIndex++)
         {
               var neighborNode = currentRelationSet[relationIndex];
-              //Compute SPT for node if it's not leaf-node or if it has been computed yet for the node.
+              //Compute SPT for node if it's not leaf-node or if it has not been computed yet for the node.
               if(relationSets[neighborNode].length !== 1 && typeof sourceNodesComputed[neighborNode] === "undefined")
               {
-                  //Determines 
                   neightborNodeHasSPT = computePTFromNode(relationSets, neighborNode);
                   sourceNodesComputed[neighborNode] = 1;
                   if(neightborNodeHasSPT)
@@ -68,10 +70,13 @@ function computePTFromNode(relationSets, sourceNode)
     var previousNodes = [];
     //Indicates where the traversal should start for a previous nodes relationships.
     var previousNodesIndex = [];
+    //Indicates where the traversal should start for the current nodes relationships.
     var nodeIndexStart = 0;
     //Keeps track of the hours taken to reach each node.
     var hoursToNode = [];
+    //Keep track of hours taken down a path
     var hours = 0;
+    
     hoursToNode[sourceNode] = hours;
     previousNodesIndex[sourceNode] = nodeIndexStart;
     //Indicates the node whose relationships will be traversed.
@@ -110,8 +115,9 @@ function computePTFromNode(relationSets, sourceNode)
                 break;
             }
         }
-        //Remember current node and time taken and then
-        //set next node whose relationships will be traversed.
+        //Remember where we left off at current node.
+        //Then set next node whose relationships will be traversed
+        //and the time that it took to reach it.
         if (relationFound === true)
         {
             previousNodes.push(currentNode);
@@ -138,7 +144,6 @@ function computePTFromNode(relationSets, sourceNode)
             //or backtrack to previous node.
             else
             {
-
                 currentNode = previousNodes.pop();
                 nodeIndexStart = previousNodesIndex[currentNode];
             }
@@ -157,6 +162,11 @@ function computePTFromNode(relationSets, sourceNode)
     
 }
 
+/**
+ * Responsible for parsing a number of relations, each of which is a pair of nodes.
+ * The resulting data structure that is returned is a 2-D array representing the a set of
+ * associations for each node in the network.
+ */
 function parseInput(numberOfRelations)
 {
     var relationSets = [];
