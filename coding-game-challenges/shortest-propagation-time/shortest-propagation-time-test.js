@@ -1,18 +1,19 @@
 //Stores shortest propagation time.
 var shortestPropagationTime = 1000000;
-//Keeps track of source nodes for which SPT has been computed.
+//Keeps track of all nodes that have been processed.
 var sourceNodesComputed = [];
 var fs  = require("fs");
-//Read in number of relations and relations.
+//Read in lines from file specified in the command.
 var lines = fs.readFileSync(process.argv[2]).toString().split('\n');
 //Grab number of relations.
 var numberOfRelations = lines.shift();
-//Parse the relations into relation sets.
+//Parse relations into a relation set for each node.
 var relationSets = parseInput(lines);
 computeShortestPropagationTime(relationSets);
+//Print the computed SPT to the console.
 console.log(shortestPropagationTime);
 
-//For each node in compute the time it takes to propagate the broadcast.
+//For each node in the relations sets, compute the time it takes to propagate the broadcast.
 function computeShortestPropagationTime(relationSets)
 {
     //Relation set of source node.
@@ -71,9 +72,11 @@ function computePTFromNode(relationSets, sourceNode)
     var previousNodes = [];
     //Indicates where the traversal should start for a previous nodes relationships.
     var previousNodesIndex = [];
+    //Indicates where the traversal should start for the current nodes relationships.
     var nodeIndexStart = 0;
     //Keeps track of the hours taken to reach each node.
     var hoursToNode = [];
+    //Keep track of hours taken down a path
     var hours = 0;
     hoursToNode[sourceNode] = hours;
     previousNodesIndex[sourceNode] = nodeIndexStart;
@@ -113,8 +116,9 @@ function computePTFromNode(relationSets, sourceNode)
                 break;
             }
         }
-        //Remember current node and time taken and then
-        //set next node whose relationships will be traversed.
+        //Remember where we left off at current node.
+        //Then set next node whose relationships will be traversed
+        //and the time that it took to reach it.
         if (relationFound === true)
         {
             previousNodes.push(currentNode);
@@ -158,6 +162,12 @@ function computePTFromNode(relationSets, sourceNode)
     return false;
     
 }
+
+/**
+ * Responsible for parsing a number of relations, each of which is a pair of nodes.
+ * The resulting data structure that is returned is a 2-D array representing the a set of
+ * associations for each node in the network.
+ */
 function parseInput(inputLines)
 {
     var relationSets = [];
