@@ -63,3 +63,6 @@ CONSTRAINTS :
 - The output from running <strong>gulp</strong> will be the Shortest Propagation Time for each input file.
 - Each input file has a corresponding output file according to the number postfix(e.g. spt-test-in.0.txt and spt-test-out.0.txt).
 - Each output file contains the validated SPT from the codinggame site merely for reference.
+
+#Proof of Challenge Completion
+![Alt Text](http://s23.postimg.org/hd4y32egr/teads_tv_challenge_proof.png "Missing Image for Diagram")
