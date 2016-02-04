@@ -53,10 +53,11 @@ CONSTRAINTS :
 
 ##2. Using NodeJS
 - Install NodeJS by following the instructions at the website: https://nodejs.org/
-- Download the CodeChallenges repo from Github: https://github.com/509dave16/CodeChallenges
-- Extract the contents of the zip
+- Download the CodeChallenges repo from Github: https://github.com/509dave16/CodeChallenges and extract the contents of the zip
+- Or clone the repo using: git clone https://github.com/509dave16/CodeChallenges.git
 - Using the Command Prompt or Terminal navigate to the following directory:<br>
 <strong>CodeChallenges/coding-game-challenges/shortest-propagation-time/</strong>
-- Then run the following command:<br>
-<strong>node shortest-propagation-time-test.js < path to one of the validation files provided in the "input" folder ></strong>
+- Then run the following commands:<br>
+<strong>npm install</strong>
+<strong>gulp</strong>
 - Each input file has a corresponding output file according to the number postfix(e.g. input.0.txt and output.0.txt)
