@@ -58,6 +58,8 @@ CONSTRAINTS :
 - Using the Command Prompt or Terminal navigate to the following directory:<br>
 <strong>CodeChallenges/coding-game-challenges/shortest-propagation-time/</strong>
 - Then run the following commands:<br>
-<strong>npm install</strong>
+<strong>npm install</strong><br>
 <strong>gulp</strong>
-- Each input file has a corresponding output file according to the number postfix(e.g. input.0.txt and output.0.txt)
+- The output from running <strong>gulp</strong> will be the Shortest Propagation Time for each input file.
+- Each input file has a corresponding output file according to the number postfix(e.g. spt-test-in.0.txt and spt-test-out.0.txt).
+- Each output file contains the validated SPT from the codinggame site merely for reference.
