@@ -1,17 +1,26 @@
+'use strict';
 //Stores shortest propagation time.
 var shortestPropagationTime = 1000000;
 //Keeps track of all nodes that have been processed.
 var sourceNodesComputed = [];
 var fs  = require("fs");
+var fileName = process.argv[2];
+console.time(fileName);
 //Read in lines from file specified in the command.
-var lines = fs.readFileSync(process.argv[2]).toString().split('\n');
+var lines = fs.readFileSync(fileName).toString().split('\n');
 //Grab number of relations.
 var numberOfRelations = lines.shift();
 //Parse relations into a relation set for each node.
 var relationSets = parseInput(lines);
 computeShortestPropagationTime(relationSets);
 //Print the computed SPT to the console.
-console.log(shortestPropagationTime);
+console.log(fileName + ': ' + shortestPropagationTime);
+const numOfNodesComputed = sourceNodesComputed.reduce((counter, value) => counter + 1, 0);
+const numOfNodes = relationSets.reduce((counter, value) => counter + 1, 0);
+console.log('Num Of Nodes: ' + numOfNodes);
+console.log('Num Of Nodes Computed: ' + numOfNodesComputed);
+console.log('Percentage of Nodes Computed: ' + (numOfNodesComputed/numOfNodes));
+console.timeEnd(fileName);
 
 //For each node in the relations sets, compute the time it takes to propagate the broadcast.
 function computeShortestPropagationTime(relationSets)
