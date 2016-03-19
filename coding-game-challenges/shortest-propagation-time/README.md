@@ -44,12 +44,12 @@ CONSTRAINTS :
 ##Challenge source: http://www.codingame.com/contests
 
 #How to test my solution
-
-##1. Using Coding Game's Challenge IDE
-- Copy the text from shortest-progagation-time-solution.js.
-- Paste into the Teads.tv Sponsored Challenge IDE at http://www.codingame.com/contests.
-- Click the Settings cog at the top right of the screen and select "Javascript" as the language of the solution.
-- Click "PLAY ALL TESTS" at the bottom right of the screen.
+<strong>(NOTE OPTION 1. IS NO LONGER VALID SINCE THE CHALLENGE IS NO LONGER ADVERTISED ON CODINGGAME)</strong>
+##~~1. Using Coding Game's Challenge IDE~~
+- ~~Copy the text from shortest-progagation-time-solution.js.~~
+- ~~Paste into the Teads.tv Sponsored Challenge IDE at http://www.codingame.com/contests.~~
+- ~~Click the Settings cog at the top right of the screen and select "Javascript" as the language of the solution.~~
+- ~~Click "PLAY ALL TESTS" at the bottom right of the screen.~~
 
 ##2. Using NodeJS
 - Install NodeJS by following the instructions at the website: https://nodejs.org/
@@ -58,6 +58,11 @@ CONSTRAINTS :
 - Using the Command Prompt or Terminal navigate to the following directory:<br>
 <strong>CodeChallenges/coding-game-challenges/shortest-propagation-time/</strong>
 - Then run the following commands:<br>
-<strong>npm install</strong>
+<strong>npm install</strong><br>
 <strong>gulp</strong>
-- Each input file has a corresponding output file according to the number postfix(e.g. input.0.txt and output.0.txt)
+- The output from running <strong>gulp</strong> will be the Shortest Propagation Time for each input file.
+- Each input file has a corresponding output file according to the number postfix(e.g. spt-test-in.0.txt and spt-test-out.0.txt).
+- Each output file contains the validated SPT from the codinggame site merely for reference.
+
+#Proof of Challenge Completion
+![Alt Text](http://s23.postimg.org/hd4y32egr/teads_tv_challenge_proof.png "Missing Image for Diagram")
