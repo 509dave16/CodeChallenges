@@ -1,4 +1,6 @@
 'use strict';
+const sptUtility = require('./spt-utility.js');
+
 //Stores shortest propagation time.
 var shortestPropagationTime = 1000000;
 //Keeps track of all nodes that have been processed.
@@ -11,7 +13,7 @@ var lines = fs.readFileSync(fileName).toString().split('\n');
 //Grab number of relations.
 var numberOfRelations = lines.shift();
 //Parse relations into a relation set for each node.
-var relationSets = parseInput(lines);
+var relationSets = sptUtility.parseInput(lines);
 computeShortestPropagationTime(relationSets);
 //Print the computed SPT to the console.
 console.log(fileName + ': ' + shortestPropagationTime);
@@ -150,28 +152,4 @@ function computePTFromNode(relationSets, sourceNode) {
   }
   //Indicates that SPT computed for source node is not the best so far.
   return false;
-
-}
-
-/**
- * Responsible for parsing a number of relations, each of which is a pair of nodes.
- * The resulting data structure that is returned is a 2-D array representing the a set of
- * associations for each node in the network.
- */
-function parseInput(inputLines) {
-  var relationSets = [];
-  for (var relationIndex = 0; relationIndex < inputLines.length; relationIndex++) {
-    var rawRelation = inputLines[relationIndex].split(" ");
-    var leftSide = parseInt(rawRelation[0]);
-    var rightSide = parseInt(rawRelation[1]);
-    if (typeof relationSets[leftSide] === 'undefined') {
-      relationSets[leftSide] = [];
-    }
-    relationSets[leftSide].push(rightSide);
-    if (typeof relationSets[rightSide] === 'undefined') {
-      relationSets[rightSide] = [];
-    }
-    relationSets[rightSide].push(leftSide);
-  }
-  return relationSets;
 }
