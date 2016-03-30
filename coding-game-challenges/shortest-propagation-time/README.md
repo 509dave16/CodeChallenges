@@ -44,14 +44,7 @@ CONSTRAINTS :
 ##Challenge source: http://www.codingame.com/contests
 
 #How to test my solution
-<strong>(NOTE OPTION 1. IS NO LONGER VALID SINCE THE CHALLENGE IS NO LONGER ADVERTISED ON CODINGGAME)</strong>
-##~~1. Using Coding Game's Challenge IDE~~
-- ~~Copy the text from shortest-progagation-time-solution.js.~~
-- ~~Paste into the Teads.tv Sponsored Challenge IDE at http://www.codingame.com/contests.~~
-- ~~Click the Settings cog at the top right of the screen and select "Javascript" as the language of the solution.~~
-- ~~Click "PLAY ALL TESTS" at the bottom right of the screen.~~
-
-##2. Using NodeJS
+##Using NodeJS
 - Install NodeJS by following the instructions at the website: https://nodejs.org/
 - Download the CodeChallenges repo from Github: https://github.com/509dave16/CodeChallenges and extract the contents of the zip
 - Or clone the repo using: git clone https://github.com/509dave16/CodeChallenges.git

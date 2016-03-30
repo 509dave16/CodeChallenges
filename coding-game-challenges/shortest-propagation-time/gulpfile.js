@@ -4,7 +4,7 @@ var shell = require('gulp-shell');
 var relativeDir = './input-files/';
 var fileNamePrefix = 'spt-test-in.';
 var fileExtension = '.txt';
-var nodeCommand = 'node shortest-propagation-time-test.js';
+var nodeCommand = 'node spt-iterative.js';
 var commands = [];
 
 for(var index = 0; index < 10; index++) {
