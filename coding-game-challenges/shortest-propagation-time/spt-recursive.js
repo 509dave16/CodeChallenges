@@ -1,46 +1,16 @@
 'use strict';
-
+const sptUtility = require('./spt-utility.js');
 const fs  = require("fs");
-const testCaseNum = parseInt(process.argv[2]);
-runTests();
-
-function runTests() {
-  const numOfTests = testCaseNum !== undefined ? testCaseNum + 1 : 10;
-  let testFileIndex = testCaseNum !== undefined ? testCaseNum :  0;
-  for(testFileIndex; testFileIndex < numOfTests; testFileIndex++) {
-    const fileName = `./input-files/spt-test-in.${testFileIndex}.txt`;
-    console.time(fileName);
-    const inputLines = fs.readFileSync(`./input-files/spt-test-in.${testFileIndex}.txt`).toString().split('\r\n');
-    inputLines.shift();//Remove first line which indicates number of relations
-    const relationSets = parseInput(inputLines);
-    const spt = computeShortestPropagationTime(relationSets);
-    console.log(`${fileName}: ${spt}`);
-    console.timeEnd(fileName);
-  }
-}
-
-/**
- * Responsible for parsing a number of relations, each of which is a pair of nodes.
- * The resulting data structure that is returned is a 2-D array representing the a set of
- * associations for each node in the network.
- */
-function parseInput(inputLines) {
-  const relationSets = [];
-  for (let relationIndex = 0; relationIndex < inputLines.length ; relationIndex++)  {
-    const rawRelation = inputLines[relationIndex].split(" ");
-    const leftSide = parseInt(rawRelation[0]);
-    const rightSide = parseInt(rawRelation[1]);
-    if (typeof relationSets[leftSide] === 'undefined') {
-      relationSets[leftSide] = [];
-    }
-    relationSets[leftSide].push(rightSide);
-    if (typeof relationSets[rightSide] === 'undefined') {
-      relationSets[rightSide] = [];
-    }
-    relationSets[rightSide].push(leftSide);
-  }
-  return relationSets;
-}
+var fileName = process.argv[2];
+//var inputFileNum = /\d/.exec(fileName)[0];
+console.log(inputFileNum);
+console.time(fileName);
+var inputLines = fs.readFileSync(fileName).toString().split('\n');
+inputLines.shift();//Remove first line which indicates number of relations
+const relationSets = sptUtility.parseInput(inputLines);
+const spt = computeShortestPropagationTime(relationSets);
+console.log(`${fileName}: ${spt}`);
+console.timeEnd(fileName);
 
 function computeShortestPropagationTime(nodeNeighbors) {
   let neighborNodeHasBetterSPT = true;
