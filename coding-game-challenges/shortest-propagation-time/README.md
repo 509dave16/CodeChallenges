@@ -43,8 +43,18 @@ CONSTRAINTS :<br>
 
 ##Challenge source: https://www.codingame.com/contests/sponsor
 
-#How to test my solution
-##Using NodeJS
+#How to test my solutions
+##1. Using Coding Game's Challenge IDE
+- Copy the text from spt-coding-game.js.
+- Go to https://www.codingame.com/contests/sponsor page
+- Click on the "Solve It" button for the Teads Sponsored Contest:
+![Alt Text](http://s29.postimg.org/lv7zbh43b/coding_game_teadstv_contest.png "Missing Image for Diagram")
+-  Select "Javascript" as the language of the solution, then paste the code into the Coding Game IDE "Your Code" panel:
+![Alt Text](http://s29.postimg.org/q5mn7296f/coding_game_editor.png "Missing Image for Diagram")
+- Click "PLAY ALL TESTCASES" at the bottom right of the screen or you can run each TESTCASE individually to see it's output.
+![Alt Text](http://s29.postimg.org/qwfdcubjr/coding_game_run_test_cases.png "Missing Image for Diagram")
+
+##2. Using NodeJS
 - Install NodeJS by following the instructions at the website: https://nodejs.org/
 - Download the CodeChallenges repo from Github: https://github.com/509dave16/CodeChallenges and extract the contents of the zip
 - Or clone the repo using: git clone https://github.com/509dave16/CodeChallenges.git
@@ -55,7 +65,7 @@ CONSTRAINTS :<br>
 <strong>1) Iterative solution command: gulp </strong><br>
 <strong>2) Recursive solution command: gulp -r</strong><br>
 
-##Notes on Output
+###Notes on NodeJS Output
 - The output from running <strong>gulp</strong> or <strong>gulp -r</strong> will be the Time to Complete, Shortest Propagation Time, Num of Nodes, and Num of Nodes Computed for each input file.
 - Each input file has a corresponding output file according to the number postfix(e.g. spt-test-in.0.txt and spt-test-out.0.txt).
 - Each output file contains the validated SPT from the codinggame site merely for reference.
