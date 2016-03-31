@@ -1,21 +1,11 @@
 'use strict';
-const sptUtility = require('./spt-utility.js');
-const fs  = require("fs");
+const sptDriver = require('./spt-driver.js');
 var fileName = process.argv[2];
-//var inputFileNum = /\d/.exec(fileName)[0];
-console.log(inputFileNum);
-console.time(fileName);
-var inputLines = fs.readFileSync(fileName).toString().split('\n');
-inputLines.shift();//Remove first line which indicates number of relations
-const relationSets = sptUtility.parseInput(inputLines);
-const spt = computeShortestPropagationTime(relationSets);
-console.log(`${fileName}: ${spt}`);
-console.timeEnd(fileName);
+sptDriver(fileName, computeShortestPropagationTime);
 
 function computeShortestPropagationTime(nodeNeighbors) {
   let neighborNodeHasBetterSPT = true;
   let computedNodes = [];
-  //const initialNode = 0;
   const initialNode = nodeNeighbors.reduce((maxNeighborsNode, neighbors, node, nodeNeighbors ) => {
     return neighbors.length > nodeNeighbors[maxNeighborsNode].length ? node : maxNeighborsNode;
   }, 0);//assuming 0 index exists
@@ -33,12 +23,11 @@ function computeShortestPropagationTime(nodeNeighbors) {
     previousState = currentState;
   }
 
-  const numOfNodesComputed = computedNodes.reduce((counter, value) => counter + 1, 0);
-  const numOfNodes = nodeNeighbors.reduce((counter, value) => counter + 1, 0);
-  console.log('Num Of Nodes: ' + numOfNodes);
-  console.log('Num Of Nodes Computed: ' + numOfNodesComputed);
-  console.log('Percentage of Nodes Computed: ' + (numOfNodesComputed/numOfNodes));
-  return previousState.spt;
+  return {
+    numOfNodes: nodeNeighbors.reduce((counter, value) => counter + 1, 0),
+    numOfNodesComputed: computedNodes.reduce((counter, value) => counter + 1, 0),
+    spt: previousState.spt
+  };
 }
 
 function computePropagationTime(previousState, node) {

@@ -37,8 +37,8 @@ N next lines: an adjancency relation between two people, expressed as X (space) 
 OUTPUT :
 The minimal amount of steps required to completely propagate the advertisement.
  
-CONSTRAINTS :
-0 < N < 150000
+CONSTRAINTS :<br>
+0 < N < 150000<br>
 0 ≤ X,Y < 200000
 
 ##Challenge source: http://www.codingame.com/contests
@@ -48,12 +48,14 @@ CONSTRAINTS :
 - Install NodeJS by following the instructions at the website: https://nodejs.org/
 - Download the CodeChallenges repo from Github: https://github.com/509dave16/CodeChallenges and extract the contents of the zip
 - Or clone the repo using: git clone https://github.com/509dave16/CodeChallenges.git
-- Using the Command Prompt or Terminal navigate to the following directory:<br>
+- Using the Command Prompt or Terminal, navigate to the following directory:<br>
 <strong>CodeChallenges/coding-game-challenges/shortest-propagation-time/</strong>
-- Then run the following commands:<br>
-<strong>npm install</strong><br>
-<strong>gulp</strong>
-- The output from running <strong>gulp</strong> will be the Shortest Propagation Time for each input file.
+- Run the following command to install all of the npm modules: <strong>npm install</strong><br>
+- Then run either of the following commands to execute the 'iterative' or 'recursive' solutions:<br>
+<strong>1) Iterative solution command: gulp </strong><br>
+<strong>2) Recursive solution command: gulp -r</strong><br>
+##Notes on Output
+- The output from running <strong>gulp</strong> or <strong>gulp -r</strong> will be the Time to Complete, Shortest Propagation Time, Num of Nodes, and Num of Nodes Computed for each input file.
 - Each input file has a corresponding output file according to the number postfix(e.g. spt-test-in.0.txt and spt-test-out.0.txt).
 - Each output file contains the validated SPT from the codinggame site merely for reference.
 
