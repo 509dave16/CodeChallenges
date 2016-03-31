@@ -41,7 +41,7 @@ CONSTRAINTS :<br>
 0 < N < 150000<br>
 0 ≤ X,Y < 200000
 
-##Challenge source: http://www.codingame.com/contests
+##Challenge source: https://www.codingame.com/contests/sponsor
 
 #How to test my solution
 ##Using NodeJS
@@ -54,6 +54,7 @@ CONSTRAINTS :<br>
 - Then run either of the following commands to execute the 'iterative' or 'recursive' solutions:<br>
 <strong>1) Iterative solution command: gulp </strong><br>
 <strong>2) Recursive solution command: gulp -r</strong><br>
+
 ##Notes on Output
 - The output from running <strong>gulp</strong> or <strong>gulp -r</strong> will be the Time to Complete, Shortest Propagation Time, Num of Nodes, and Num of Nodes Computed for each input file.
 - Each input file has a corresponding output file according to the number postfix(e.g. spt-test-in.0.txt and spt-test-out.0.txt).
