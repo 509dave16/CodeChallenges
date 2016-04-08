@@ -5,8 +5,8 @@ This repo contains 3 solutions:
 3. Recursive Solution
 
 I originally  solved the Shortest Propagation Time challenge on Coding Game that was sponsored by Teads.TV, an online marketing company, using the Original Solution. Later I wanted to try writing a Recursive solution and compare it's performance with the Iterative solution that I had originally wrote.
-- Go to the [Testing Solutions](#Testing-Solutions) section to find out more on how to see see my solutions in action.
-- You can see [proof](#Proof-of-Challenge-Completion) of me completing the challenge.
+- Go to the [Testing Solutions](#testing-solutions) section to find out more on how to see see my solutions in action.
+- You can see [proof](#proof) of me completing the challenge.
 #Challenge
 Here at Teads we know that to maximize the impact of an advertisement, the message needs to spread far and quickly.
  
@@ -51,7 +51,7 @@ CONSTRAINTS :<br>
 
 ##Challenge source: https://www.codingame.com/contests/sponsor
 
-#Testing Solutions
+#testing solutions
 ##1. Test Original Solution using Coding Game's Challenge IDE
 - Copy the text from spt-coding-game.js.
 - Go to https://www.codingame.com/contests/sponsor page
@@ -78,5 +78,5 @@ CONSTRAINTS :<br>
 - Each input file has a corresponding output file according to the number postfix(e.g. spt-test-in.0.txt and spt-test-out.0.txt).
 - Each output file contains the validated SPT from the codinggame site merely for reference.
 
-#Proof of Challenge Completion
+#proof
 ![Alt Text](http://s23.postimg.org/hd4y32egr/teads_tv_challenge_proof.png "Missing Image for Diagram")
