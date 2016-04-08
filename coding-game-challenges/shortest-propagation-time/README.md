@@ -1,4 +1,12 @@
+#Summary
+This repo contains 3 solutions:
+1. Original Solution submitted to Coding Game
+2. Iterative Solution(almost the same as 1.)
+3. Recursive Solution
 
+I originally  solved the Shortest Propagation Time challenge on Coding Game that was sponsored by Teads.TV, an online marketing company, using the Original Solution. Later I wanted to try writing a Recursive solution and compare it's performance with the Iterative solution that I had originally wrote.
+- Go to the [Testing Solutions](#How to test my solutions) section to find out more on how to see see my solutions in action.
+- You can see [proof](#Proof of Challenge Completion) of me completing the challenge.
 #Challenge
 Here at Teads we know that to maximize the impact of an advertisement, the message needs to spread far and quickly.
  
@@ -43,8 +51,8 @@ CONSTRAINTS :<br>
 
 ##Challenge source: https://www.codingame.com/contests/sponsor
 
-#How to test my solutions
-##1. Using Coding Game's Challenge IDE
+#Testing Solutions
+##1. Test Original Solution using Coding Game's Challenge IDE
 - Copy the text from spt-coding-game.js.
 - Go to https://www.codingame.com/contests/sponsor page
 - Click on the "Solve It" button for the Teads Sponsored Contest:
@@ -54,7 +62,7 @@ CONSTRAINTS :<br>
 - Click "PLAY ALL TESTCASES" at the bottom right of the screen or you can run each TESTCASE individually to see it's output.
 ![Alt Text](http://s29.postimg.org/qwfdcubjr/coding_game_run_test_cases.png "Missing Image for Diagram")
 
-##2. Using NodeJS
+##2. Test Iterative and Recursive Solutions using NodeJS
 - Install NodeJS by following the instructions at the website: https://nodejs.org/
 - Download the CodeChallenges repo from Github: https://github.com/509dave16/CodeChallenges and extract the contents of the zip
 - Or clone the repo using: git clone https://github.com/509dave16/CodeChallenges.git
