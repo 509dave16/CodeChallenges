@@ -5,8 +5,8 @@ This repo contains 3 solutions:
 3. Recursive Solution
 
 I originally  solved the Shortest Propagation Time challenge on Coding Game that was sponsored by Teads.TV, an online marketing company, using the Original Solution. Later I wanted to try writing a Recursive solution and compare it's performance with the Iterative solution that I had originally wrote.
-- Go to the [Testing Solutions](#How to test my solutions) section to find out more on how to see see my solutions in action.
-- You can see [proof](#Proof of Challenge Completion) of me completing the challenge.
+- Go to the [Testing Solutions](#Testing-Solutions) section to find out more on how to see see my solutions in action.
+- You can see [proof](#Proof-of-Challenge-Completion) of me completing the challenge.
 #Challenge
 Here at Teads we know that to maximize the impact of an advertisement, the message needs to spread far and quickly.
  
