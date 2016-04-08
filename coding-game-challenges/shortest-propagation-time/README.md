@@ -1,5 +1,6 @@
 #Summary
 This repo contains 3 solutions:
+
 1. Original Solution submitted to Coding Game
 2. Iterative Solution(almost the same as 1.)
 3. Recursive Solution
